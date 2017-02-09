@@ -52,8 +52,20 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				
 				
 		case *linebot.TextMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你說"+message.Text)).Do();
-		
+				
+
+				inText := strings.ToLower(message.Text)
+				if strings.Contains(inText, "狗") || strings.Contains(inText, "dog") {
+					
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("1"+message.Text)).Do();	
+					
+				} else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
+					
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("2"+message.Text)).Do();	
+					
+				}
+
+				
 			
 				err != nil {
 					log.Print(err)
