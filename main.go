@@ -60,8 +60,8 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		}
 		
 		for _, event := range events {
-		if event.Type == linebot.EventTypeImageMessage {
-			switch pet := event.ImageMessage.(type) {
+		if event.Type == linebot.EventTypeMessage {
+			switch pet := event.Message.(type) {
 				
 		
 			case *linebot.ImageMessage:
