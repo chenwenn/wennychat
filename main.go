@@ -45,21 +45,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for _, result := range received.Results {
-		content := result.Content()
-
-		//Add with new friend.
-		if content != nil && content.IsOperation && content.OpType == OpTypeAddedAsFriend {
-		
-			out := fmt.Sprintf("(Welcom MSG)歡迎訊息..")
-			//result.RawContent.Params[0] is who send your bot friend added operation, otherwise you cannot get in content or operation content.
-			_, err = bot.SendText([]string{result.RawContent.Params[0]}, out)
-			if err != nil {
-				log.Println(err)
-			}
-			log.Println("New friend add event.")
-		}
-  }	
+	
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
