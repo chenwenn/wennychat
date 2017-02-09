@@ -54,19 +54,21 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			   case "你好":
 				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"可以跟我聊天哦!")).Do();
 				 case "晚安":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("晚安，祝你有好夢!")).Do();
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("晚安，祝你有好夢!")).Do();
 				 case "你是誰":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你的女朋友")).Do();
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你的女朋友")).Do();
 				 case "今天吃甚麼":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("廁所用餐很適合你")).Do();
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("廁所用餐很適合你")).Do();
 				 case "蔡英文":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("他是歐巴森嗎?")).Do();
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("他是歐巴森嗎?")).Do();
 				 case "給我錢":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("我會燒給你")).Do();
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("我會燒給你")).Do();
 				 case "我可以說什麼?":
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你可以說 你是誰 今天吃甚麼 給我錢 你好")).Do();
+		
+				default:
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你可以說 你是誰 今天吃甚麼 給我錢 你好")).Do();
 		
-				
 				 err != nil {
 					log.Print(err)
 				}
