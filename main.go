@@ -60,7 +60,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					log.Print(err)
 				}
 				}
-				else if message.Text=="晚安" {
+				if message.Text=="晚安" {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("2"+message.Text)).Do();	
 				err != nil {
 					log.Print(err)
