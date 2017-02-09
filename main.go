@@ -45,30 +45,27 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//¥ş³¡°T®§  case *linebot.TextMessage:
+	//å…¨éƒ¨è¨Šæ¯  case *linebot.TextMessage:
 
 	for _, event := range events {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 
-			   case "§A¦n":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"¥i¥H¸ò§Ú²á¤Ñ®@!")).Do();
-				 case "±ß¦w":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("±ß¦w¡A¯¬§A¦³¦n¹Ú!")).Do();
-				 case "§A¬O½Ö":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("§Aªº¤kªB¤Í")).Do();
-				 case "¤µ¤Ñ¦Y¬Æ»ò":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("´Z©Ò¥ÎÀ\«Ü¾A¦X§A")).Do();
-				 case "½²­^¤å":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("¥L¬O¼Ú¤Ú´Ë¶Ü?")).Do();
-				 case "µ¹§Ú¿ú":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("§Ú·|¿Nµ¹§A")).Do();
-				 case "§Ú¥i¥H»¡¤°»ò?":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("§A¥i¥H»¡ §A¬O½Ö ¤µ¤Ñ¦Y¬Æ»ò µ¹§Ú¿ú §A¦n")).Do();
+			   case "ä½ å¥½":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"å¯ä»¥è·Ÿæˆ‘èŠå¤©å“¦!")).Do();
+				 case "æ™šå®‰":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("æ™šå®‰ï¼Œç¥ä½ æœ‰å¥½å¤¢!")).Do();
+				 case "ä½ æ˜¯èª°":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("ä½ çš„å¥³æœ‹å‹")).Do();
+				 case "ä»Šå¤©åƒç”šéº¼":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("å»æ‰€ç”¨é¤å¾ˆé©åˆä½ ")).Do();
+				 case "è”¡è‹±æ–‡":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("ä»–æ˜¯æ­å·´æ£®å—?")).Do();
+				 case "çµ¦æˆ‘éŒ¢":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("æˆ‘æœƒç‡’çµ¦ä½ ")).Do();
+				 case "æˆ‘å¯ä»¥èªªä»€éº¼?":
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("ä½ å¯ä»¥èªª ä½ æ˜¯èª° ä»Šå¤©åƒç”šéº¼ çµ¦æˆ‘éŒ¢ ä½ å¥½")).Do();
 		
-				
-				default:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("§A»¡"+message.Text+"§Ú¤£©ú¥Õ")).Do();
 				
 				 err != nil {
 					log.Print(err)
