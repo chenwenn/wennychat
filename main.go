@@ -61,11 +61,15 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				else if strings.Contains(inText, "貓") || strings.Contains(inText, "cat") {
 				
 				}
-				
+				else
+				{
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("2"+message.Text)).Do();	
 				err != nil {
 					log.Print(err)
 				}
+				
+				}
+				
 				
 			}
 		}
