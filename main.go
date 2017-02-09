@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 
 			   case "你好":
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"可以跟我聊天哦!")).Do();
+				 bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text+"可以跟我聊天哦!")).Do();
 				 case "晚安":
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("晚安，祝你有好夢!")).Do();
 				 case "你是誰":
