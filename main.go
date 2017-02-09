@@ -52,7 +52,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				
 				
 		case *linebot.TextMessage:
-				var txt txt;
+				var txt ;
 				
 				
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("2"+message.Text)).Do();	
