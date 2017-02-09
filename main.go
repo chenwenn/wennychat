@@ -52,26 +52,14 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				
 			case *linebot.TextMessage:
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你說"+message.Text)).Do();
-				
+			case *linebot.ImageMessage:
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out), linebot.NewImageMessage(pet.ImageName,pet.ImageName)).Do(); 
+			
 				err != nil {
 					log.Print(err)
 				}
 			}
 		}
 		
-		for _, event := range events {
-		if event.Type == linebot.EventTypeMessage {
-			switch pet := event.Message.(type) {
-				
-		
-			case *linebot.ImageMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out), linebot.NewImageMessage(pet.ImageName)).Do(); 
-		
-				err != nil{
-					log.Print(err)
-				}
-			}
-		}	
-			
-}}
+}
 }
