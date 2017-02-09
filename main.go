@@ -58,5 +58,20 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 			}
 		}
-	}
+		
+		for _, event := range events {
+		if event.Type == linebot.EventTypeImageMessage {
+			switch pet := event.ImageMessage.(type) {
+				
+		
+			case *linebot.ImageMessage:
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(out), linebot.NewImageMessage(pet.ImageName, pet.ImageName)).Do(); 
+		
+				err != nil{
+					log.Print(err)
+				}
+			}
+		}	
+			
+}
 }
