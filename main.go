@@ -103,6 +103,45 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 					log.Print(err)
 				}
 				}
+				
+				if message.Text=="請你跟我這樣說" {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage(message.Text)).Do();	
+				err != nil {
+					log.Print(err)
+				}
+				}
+				
+				if message.Text=="最帥的歐爸是誰" {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("圤寶劍")).Do();	
+				err != nil {
+					log.Print(err)
+				}
+				}
+				if message.Text=="韓劇有甚麼好看的" {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("孤獨又燦爛的鬼怪或是你可以去看藍色大海傳說")).Do();	
+				err != nil {
+					log.Print(err)
+				}
+				}
+				
+				if message.Text=="最好玩的遊戲是甚麼" {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("英雄聯盟吧!應該...")).Do();	
+				err != nil {
+					log.Print(err)
+				}
+				}
+				if message.Text=="楊景翔是豬" {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你說得非常正確")).Do();	
+				err != nil {
+					log.Print(err)
+				}
+				}
+				if message.Text=="猜猜看我多高" {
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("160公分 不能在高了!")).Do();	
+				err != nil {
+					log.Print(err)
+				}
+				}
 
 				
 				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你說"+message.Text+"我不明白")).Do();	
