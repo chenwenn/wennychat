@@ -50,10 +50,11 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		if event.Type == linebot.EventTypeMessage {
 			switch message := event.Message.(type) {
 				
+				
+		case *linebot.TextMessage:
+				
+				log.Println(message.Text)
 				inText := strings.ToLower(message.Text)
-		case strings.Contains(inText, "狗"):
-				
-				
 			
 				
 				
