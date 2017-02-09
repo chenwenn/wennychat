@@ -54,7 +54,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 		case *linebot.TextMessage:
 				
 				log.Println(message.Text)
-				if strings.Contains(message.Text, "狗") || strings.Contains(message.Text, "dog") {
+				if message.Text=="狗" {
 					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("1"+message.Text)).Do();	
 				err != nil {
 					log.Print(err)
