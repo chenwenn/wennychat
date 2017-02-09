@@ -74,7 +74,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 				}
 					if message.Text=="你是誰" {
-					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("FBI偵探"+messge.Texta)).Do();	
+					if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("FBI偵探"+message.Texta)).Do();	
 				err != nil {
 					log.Print(err)
 				}
