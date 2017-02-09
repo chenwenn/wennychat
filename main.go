@@ -50,8 +50,9 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 			switch message := event.Message.(type) {
 				
 				
-			case *linebot.ImageMessage:
-				if _, err = bot.ReplyMessage(event.ReplyToken,linebot.NewTextMessage("圖很好")).Do(); 
+		case *linebot.TextMessage:
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你說"+message.Text)).Do();
+		
 			
 				err != nil {
 					log.Print(err)
