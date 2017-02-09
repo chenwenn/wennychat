@@ -144,7 +144,7 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 				}
 
 				
-				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("你說"+message.Text+"我不明白")).Do();	
+				if _, err = bot.ReplyMessage(event.ReplyToken, linebot.NewTextMessage("已讀")).Do();	
 				err != nil {
 					log.Print(err)
 				}
